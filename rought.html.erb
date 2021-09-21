@@ -1,0 +1,8 @@
+
+<%= upper_nav_item(t(:inbox, default: "Inbox"), admin_topics_path,["topics"], ['index','show'], "fas fa-envelope") if (forums? || tickets?) && current_user.is_agent? %>
+                <%#= upper_nav_item(t(:reports, default: 'Reports'), admin_reports_path(interval: 7), ["reports"], ['index', 'groups', 'team'], "fas fa-chart-bar") if tickets? && current_user.is_admin? %>
+                <%= upper_nav_item("Residents", admin_users_path(role: 'user'), ["users"], ["index","show","edit","update"], "fas fa-users") if current_user.is_admin? %>
+                <%= upper_nav_item("Notice", "#", ["users"], ["index","show","edit","update"], "fas fa-clipboard") if current_user.is_admin? %>
+                <%= upper_nav_item("Service Provider", "#", ["users"], ["index","show","edit","update"], "fas fa-hands-helping") if current_user.is_admin? %>
+                <%= upper_nav_item("Discussion", "#", ["users"], ["index","show","edit","update"], "fas fa-newspaper") if current_user.is_admin? %>
+                <%= upper_nav_item("Events", "#", ["users"], ["index","show","edit","update"], "fas fa-calendar-alt") if current_user.is_admin? %>

@@ -1,0 +1,31 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="<%= root_path %>">Logo</a>
+    </div>
+    <% if user_signed_in? %>
+      <ul class="nav navbar-nav">
+        <li><%= link_to ' Tickets', "#", class: "fas fa-envelope" %></li>
+        <li><%= link_to ' Residents',  "#", class: "fas fa-users" %></li>
+        <li><%= link_to ' Service Providers',  "#", class: "fas fa-hands-helping" %></li>
+        <li><%= link_to ' Notice',  "#", class: "fas fa-clipboard" %></li>
+        <li><%= link_to ' Discussion',  "#", class: "fas fa-newspaper" %></li>
+        <li><%= link_to ' Events',  "#", class: "fas fa-calendar-alt" %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="<%= edit_user_registration_path %>"><span class="glyphicon glyphicon-user"></span> Edit Account </a></li>
+        <li>
+          <%= link_to 'Sign out', destroy_user_session_path, class: "btn btn-outline-primary", method: 'delete'%>
+        </li>
+      </ul>
+      <% else %>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="<%= new_user_registration_path %>"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="<%= new_user_session_path %>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      <% end %>
+  </div>
+</nav>
+
+
+
